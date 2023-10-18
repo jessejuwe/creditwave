@@ -85,7 +85,6 @@ const SignIn: React.FC = () => {
                 </div>
 
                 <Button
-                  bg="primary.default"
                   variant="solid"
                   type="submit"
                   isDisabled={!isValid || isSubmitting}

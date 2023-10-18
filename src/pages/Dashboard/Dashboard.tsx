@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { AiOutlineDown } from 'react-icons/ai';
 import { FaBars } from 'react-icons/fa';
 import { VscBellDot } from 'react-icons/vsc';
-import { Avatar, Image } from '@chakra-ui/react';
+import { Avatar, Button, Image } from '@chakra-ui/react';
+import DatePicker from 'react-datepicker';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 import { images } from '../../constants';
 import { Card } from '../../exports/exports';
+import { APPLICATIONS } from '../../helpers/applications';
 import './Dashboard.scss';
 
 const Dashboard: React.FC = () => {
+  const [startDate, setStartDate] = useState<Date>(new Date());
+  const [endDate, setEndDate] = useState(null);
+
+  const onChange = (dates: any) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  };
+
   return (
     <motion.div
       className="app__dashboard"
@@ -35,7 +48,7 @@ const Dashboard: React.FC = () => {
             <p>adekunke.adebona@creditwaveng.com</p>
           </div>
 
-          <Avatar name="Adekunle Adebona" />
+          <Avatar name="Adekunle Adebona" size="sm" />
           <AiOutlineDown />
         </div>
       </div>
@@ -55,15 +68,53 @@ const Dashboard: React.FC = () => {
 
           <Card className="avatar">
             <Avatar name="Adekunle Adebona" size="lg" />
+            <h3>Adekunle Adebona</h3>
+            <p>UI/UX Designer</p>
           </Card>
         </div>
 
         <div className="application-container">
           <Card className="application">
-            <div className="flex items-center justify-between"></div>
+            <div className="info-nav">
+              <h3>Applications</h3>
+              <p>See More</p>
+            </div>
+
+            <div className="apps">
+              {APPLICATIONS.map((app, index) => (
+                <div key={index} className="app">
+                  <app.icon />
+                  <h3>{app.title}</h3>
+                  <div className="base">
+                    <p className="date">{app.date}</p>
+                    <p className="badge">{app.badge}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </Card>
 
-          <div className="helper"></div>
+          <div className="helper">
+            <Card className="date-picker">
+              <DatePicker
+                selected={startDate}
+                onChange={onChange}
+                startDate={startDate}
+                endDate={endDate}
+                selectsRange
+                inline
+              />
+            </Card>
+
+            <Card className="help">
+              <Image src={images.help} />
+              <h3>Need Help?</h3>
+              <p>Do you have any problem while using the creditwave SSO?</p>
+              <Button variant="solid" type="submit" width="full" size="sm">
+                Contact Us Now
+              </Button>
+            </Card>
+          </div>
         </div>
       </div>
     </motion.div>
