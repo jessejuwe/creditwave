@@ -4,10 +4,10 @@
 
 @layer components {
   .app__signin {
-    @apply w-full bg-primary flex items-center justify-between;
+    @apply w-full h-screen bg-primary flex items-center justify-between;
 
     .app__signin-info {
-      @apply w-full lg:max-w-[50%] px-20 pt-20 hidden lg:flex;
+      @apply w-full lg:max-w-[50%] px-20 pt-20 hidden lg:flex-col gap-10;
 
       .heading {
         @apply text-white text-4xl font-bold tracking-wide;
@@ -19,20 +19,20 @@
     }
 
     .app__signin-input {
-      @apply w-full lg:max-w-[50%] bg-gray-200 px-28 flex items-center justify-center relative;
+      @apply w-full lg:max-w-[50%] bg-gray-100 px-28 flex items-center justify-center relative;
 
       .centered {
         @apply w-full flex-col items-center justify-center gap-10;
 
         .logo {
-          @apply text-secondary text-4xl font-bold tracking-wider;
+          @apply text-secondary text-4xl font-bold tracking-wider flex items-center justify-around;
         }
 
         form {
           @apply w-full flex-col items-center justify-center gap-5;
 
           input {
-            @apply w-full outline-none border-2 rounded bg-transparent text-sm text-gray-900 mb-4 p-2;
+            @apply w-full outline border-2 rounded bg-transparent text-sm text-gray-900 mb-4 p-2;
 
             &::placehoder {
               @apply text-[#C8C1D1] text-sm;
@@ -43,7 +43,7 @@
             @apply relative w-full flex items-center justify-between;
 
             input {
-              @apply w-full outline-none border-2 rounded bg-transparent text-sm text-gray-900 mb-4 p-2;
+              @apply w-full outline border-2 rounded bg-transparent text-sm text-gray-900 mb-4 p-2;
 
               &::placehoder {
                 @apply text-[#C8C1D1] text-sm;
@@ -53,6 +53,10 @@
             svg {
               @apply absolute right-4 top-3 cursor-pointer text-sm;
             }
+          }
+
+          button {
+            @apply text-white;
           }
         }
       }
