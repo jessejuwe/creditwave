@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+import { Fallback } from './exports/exports';
+
+const Dashboard = lazy(() => import('./pages/Dashboard/Dashboard'));
+const EnterOTP = lazy(() => import('./pages/EnterOTP/EnterOTP'));
+const Error404 = lazy(() => import('./pages/Error404/Error404'));
+const SignIn = lazy(() => import('./pages/SignIn/SignIn'));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<Fallback />}>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/enter-otp" element={<EnterOTP />} />
+        <Route path="*" element={<Error404 />} />
+      </Routes>
+    </Suspense>
   );
 }
 

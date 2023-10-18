@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .app__signin {
+    @apply w-full bg-primary flex items-center justify-between;
+
+    .app__signin-info {
+      @apply w-full lg:max-w-[50%] px-20 pt-20 hidden lg:flex;
+
+      .heading {
+        @apply text-white text-4xl font-bold tracking-wide;
+      }
+
+      .text {
+        @apply w-full text-white text-base font-normal text-justify;
+      }
+    }
+
+    .app__signin-input {
+      @apply w-full lg:max-w-[50%] bg-gray-200 px-28 flex items-center justify-center relative;
+
+      .centered {
+        @apply w-full flex-col items-center justify-center gap-10;
+
+        .logo {
+          @apply text-secondary text-4xl font-bold tracking-wider;
+        }
+
+        form {
+          @apply w-full flex-col items-center justify-center gap-5;
+
+          input {
+            @apply w-full outline-none border-2 rounded bg-transparent text-sm text-gray-900 mb-4 p-2;
+
+            &::placehoder {
+              @apply text-[#C8C1D1] text-sm;
+            }
+          }
+
+          .input-group {
+            @apply relative w-full flex items-center justify-between;
+
+            input {
+              @apply w-full outline-none border-2 rounded bg-transparent text-sm text-gray-900 mb-4 p-2;
+
+              &::placehoder {
+                @apply text-[#C8C1D1] text-sm;
+              }
+            }
+
+            svg {
+              @apply absolute right-4 top-3 cursor-pointer text-sm;
+            }
+          }
+        }
+      }
+
+      .copyright {
+        @apply text-right absolute right-28 bottom-10 text-sm text-gray-800;
+      }
+    }
+  }
+}

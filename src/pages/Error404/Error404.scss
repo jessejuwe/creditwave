@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .app__error {
+    @apply bg-secondary w-full h-screen;
+
+    .error {
+      @apply max-w-lg;
+    }
+  }
+}

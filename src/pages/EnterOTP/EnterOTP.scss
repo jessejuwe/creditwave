@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .app__enter-otp {
+    @apply w-full bg-gray-200;
+
+    .centered {
+      @apply w-full flex-col items-center justify-center gap-10;
+
+      .logo {
+        @apply text-secondary text-4xl font-bold tracking-wider;
+      }
+
+      .inner-centered {
+        @apply w-full flex-col items-center justify-center py-10 px-5 gap-6;
+
+        .unlock {
+          @apply w-fit bg-primary-light rounded-xl p-4;
+
+          svg {
+            @apply text-lg text-secondary;
+          }
+        }
+
+        h3 {
+          @apply text-lg text-secondary;
+        }
+
+        p {
+          @apply text-center text-sm max-w-[90%];
+        }
+
+        form {
+          @apply w-full flex-col items-center justify-center gap-5;
+
+          .input-group {
+            @apply relative w-full flex items-center justify-between;
+
+            input {
+              @apply w-full outline-none border-2 rounded bg-transparent text-sm text-gray-900 mb-4 p-2;
+
+              &::placehoder {
+                @apply text-[#C8C1D1] text-sm;
+              }
+            }
+
+            .timer {
+              @apply text-primary absolute right-4 top-3 text-sm;
+            }
+          }
+        }
+      }
+    }
+  }
+}

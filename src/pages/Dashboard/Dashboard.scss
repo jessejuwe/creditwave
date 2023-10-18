@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .app__dashboard {
+    @apply w-full bg-gray-200;
+
+    .app__dashboard-header {
+      @apply w-full bg-primary-dark flex items-center justify-between px-6;
+
+      .menu {
+        @apply w-fit;
+
+        svg {
+          @apply text-white;
+        }
+      }
+
+      .info {
+        @apply flex items-center justify-center gap-3;
+
+        svg {
+          @apply text-white;
+        }
+
+        .name-mail {
+          @apply flex-col gap-2 items-end justify-center;
+        }
+      }
+    }
+
+    .app__dashboard-content {
+      @apply w-full p-6 flex-col items-center justify-center gap-6;
+
+      .welcome-container {
+        @apply flex items-center justify-between gap-4;
+
+        .message {
+          @apply w-full max-w-[70%] rounded-lg;
+        }
+
+        .avatar {
+          @apply w-full max-w-[30%] rounded-lg;
+        }
+      }
+
+      .application-container {
+        @apply flex items-center justify-between gap-4;
+
+        .application {
+          @apply w-full max-w-[70%] rounded-lg;
+        }
+
+        .help {
+          @apply w-full max-w-[30%] flex-col;
+        }
+      }
+    }
+  }
+}
