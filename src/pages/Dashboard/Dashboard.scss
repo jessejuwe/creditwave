@@ -40,7 +40,7 @@
           @apply w-full max-w-[70%] rounded-lg bg-primary p-6;
 
           .inner-message {
-            @apply flex-col items items-start justify-center gap-2;
+            @apply flex-col items-start justify-center gap-2;
 
             h1 {
               @apply text-white text-2xl;
