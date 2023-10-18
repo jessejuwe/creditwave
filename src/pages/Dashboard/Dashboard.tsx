@@ -3,8 +3,10 @@ import { motion } from 'framer-motion';
 import { AiOutlineDown } from 'react-icons/ai';
 import { FaBars } from 'react-icons/fa';
 import { VscBellDot } from 'react-icons/vsc';
-import { Avatar } from '@chakra-ui/react';
+import { Avatar, Image } from '@chakra-ui/react';
 
+import { images } from '../../constants';
+import { Card } from '../../exports/exports';
 import './Dashboard.scss';
 
 const Dashboard: React.FC = () => {
@@ -40,13 +42,26 @@ const Dashboard: React.FC = () => {
 
       <div className="app__dashboard-content">
         <div className="welcome-container">
-          <div className="message"></div>
+          <div className="message">
+            <div className="inner-message">
+              <h1>Wecome back, Kenny!</h1>
+              <p>Your last login was 12:00pm 9th July, 2023</p>
+            </div>
 
-          <div className="avatar"></div>
+            <div className="image">
+              <Image src={images.dashboard} />
+            </div>
+          </div>
+
+          <Card className="avatar">
+            <Avatar name="Adekunle Adebona" size="lg" />
+          </Card>
         </div>
 
         <div className="application-container">
-          <div className="application"></div>
+          <Card className="application">
+            <div className="flex items-center justify-between"></div>
+          </Card>
 
           <div className="helper"></div>
         </div>

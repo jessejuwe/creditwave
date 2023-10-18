@@ -37,11 +37,23 @@
         @apply flex items-center justify-between gap-4;
 
         .message {
-          @apply w-full max-w-[70%] rounded-lg;
+          @apply w-full max-w-[70%] rounded-lg bg-primary p-6;
+
+          .inner-message {
+            @apply flex-col items items-start justify-center gap-2;
+
+            h1 {
+              @apply text-white text-2xl;
+            }
+
+            p {
+              @apply text-white text-xs;
+            }
+          }
         }
 
         .avatar {
-          @apply w-full max-w-[30%] rounded-lg;
+          @apply w-full max-w-[30%] rounded-lg p-6;
         }
       }
 
@@ -49,7 +61,7 @@
         @apply flex items-center justify-between gap-4;
 
         .application {
-          @apply w-full max-w-[70%] rounded-lg;
+          @apply w-full max-w-[70%] rounded-lg p-6;
         }
 
         .help {

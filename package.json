@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -20,6 +21,7 @@
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.69.4",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0",
     "yup": "^1.3.2"
@@ -51,5 +53,8 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.3.3"
+  },
+  "overrides": {
+    "resolve-url-loader": "5.0.0"
   }
 }
