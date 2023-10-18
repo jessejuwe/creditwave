@@ -4,68 +4,156 @@
 
 @layer components {
   .app__dashboard {
-    @apply w-full h-screen bg-gray-200;
+    @apply w-full h-full bg-gray-200 block;
 
     .app__dashboard-header {
-      @apply w-full bg-primary-dark flex items-center justify-between px-6;
+      @apply w-full bg-primary-dark flex items-center justify-between px-4 lg:px-12 h-20;
 
       .menu {
-        @apply w-fit;
+        @apply w-fit cursor-pointer;
 
         svg {
-          @apply text-white;
+          @apply text-white hover:text-primary;
         }
       }
 
       .info {
-        @apply flex items-center justify-center gap-3;
+        @apply flex items-center justify-center gap-2 lg:gap-4;
 
         svg {
-          @apply text-white;
+          @apply text-white cursor-pointer;
         }
 
         .name-mail {
-          @apply flex-col gap-2 items-end justify-center;
+          @apply hidden lg:flex flex-col gap-1 items-end justify-center;
+
+          h3 {
+            @apply text-white font-semibold;
+          }
+
+          p {
+            @apply text-white text-sm;
+          }
         }
       }
     }
 
     .app__dashboard-content {
-      @apply w-full p-6 flex-col items-center justify-center gap-6;
+      @apply w-full py-6 px-6 lg:px-12 flex flex-col items-center justify-center gap-4;
 
       .welcome-container {
-        @apply flex items-center justify-between gap-4;
+        @apply w-full flex items-center justify-between gap-6;
 
         .message {
-          @apply w-full max-w-[70%] rounded-lg bg-primary p-6;
+          @apply w-full lg:min-h-[120px] lg:max-w-[75%] rounded-lg bg-primary py-6 px-6 lg:px-12 flex items-start justify-between;
 
           .inner-message {
             @apply flex-col items-start justify-center gap-2;
 
             h1 {
-              @apply text-white text-2xl;
+              @apply text-white text-2xl font-semibold;
             }
 
             p {
               @apply text-white text-xs;
             }
           }
+
+          .image {
+            @apply w-[15%] h-[15%] bg-transparent hidden lg:flex;
+
+            img {
+              @apply h-full w-full;
+            }
+          }
         }
 
         .avatar {
-          @apply w-full max-w-[30%] rounded-lg p-6;
+          @apply w-full min-h-[120px] max-w-[25%] rounded-lg py-2 px-6 hidden lg:flex flex-col items-center justify-center gap-1;
+
+          h3 {
+            @apply font-semibold;
+          }
+
+          p {
+            @apply text-sm;
+          }
         }
       }
 
       .application-container {
-        @apply flex items-center justify-between gap-4;
+        @apply h-full w-full flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6;
 
         .application {
-          @apply w-full max-w-[70%] rounded-lg p-6;
+          @apply w-full lg:min-h-[528px] h-full lg:max-w-[75%] rounded-lg py-6 px-6 lg:px-12;
+
+          .info-nav {
+            @apply flex items-center justify-between mb-4;
+
+            h3 {
+              @apply font-bold;
+            }
+
+            p {
+              @apply text-primary text-sm cursor-pointer hover:underline;
+            }
+          }
+
+          .apps {
+            @apply flex flex-col items-center justify-center lg:grid grid-cols-3 gap-4;
+
+            .app {
+              @apply w-full rounded-lg flex flex-col items-start justify-center gap-2 bg-primary-light p-6;
+
+              svg {
+                @apply text-primary-dark text-2xl;
+              }
+
+              h3 {
+                @apply text-primary-dark font-semibold;
+              }
+
+              .base {
+                @apply w-full flex items-center justify-between;
+
+                .date {
+                  @apply text-sm text-primary-dark;
+                }
+
+                .badge {
+                  @apply text-xs rounded-lg p-1 text-white bg-primary-dark;
+                }
+              }
+            }
+          }
         }
 
-        .help {
-          @apply w-full max-w-[30%] flex-col;
+        .helper {
+          @apply w-full min-h-[380px] h-full lg:max-w-[25%] flex flex-col items-center justify-start gap-4;
+
+          .date-picker {
+            @apply max-h-[10%] rounded-lg flex items-center justify-center;
+          }
+
+          .help {
+            @apply min-h-[50px] rounded-lg flex flex-col items-center justify-center gap-1;
+
+            img {
+              @apply w-[35%] h-[35%] bg-transparent;
+            }
+
+            h3 {
+              @apply font-semibold;
+            }
+
+            p {
+              @apply max-w-[75%] text-center text-sm;
+            }
+
+            button {
+              @apply text-white bg-primary hover:bg-primary-dark;
+            }
+          }
         }
       }
     }

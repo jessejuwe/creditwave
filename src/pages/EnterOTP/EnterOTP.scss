@@ -4,20 +4,20 @@
 
 @layer components {
   .app__enter-otp {
-    @apply w-full h-screen bg-gray-200;
+    @apply w-full h-screen bg-gray-100 flex items-center justify-center;
 
     .centered {
-      @apply flex-col items-center justify-center gap-10;
+      @apply max-w-xs md:max-w-sm lg:max-w-md;
 
       .logo {
-        @apply text-secondary text-4xl font-bold tracking-wider flex items-center justify-around;
+        @apply text-secondary text-4xl font-bold tracking-wider flex items-center justify-center mb-10;
       }
 
-      .inner-centered {
-        @apply w-full flex-col items-center justify-center py-10 px-5 gap-6;
+      .card {
+        @apply w-full rounded-lg py-10 px-8 flex flex-col items-center justify-center gap-6;
 
         .unlock {
-          @apply w-fit bg-primary-light rounded-xl p-4;
+          @apply w-fit bg-primary-light rounded-xl p-4 flex items-center justify-center;
 
           svg {
             @apply text-lg text-secondary;
@@ -25,11 +25,11 @@
         }
 
         h3 {
-          @apply text-lg text-secondary;
+          @apply text-lg text-secondary font-semibold;
         }
 
         p {
-          @apply text-sm max-w-[90%] text-center;
+          @apply text-sm md:text-sm max-w-[90%] text-center text-secondary;
         }
 
         form {
@@ -39,7 +39,7 @@
             @apply relative w-full flex items-center justify-between;
 
             input {
-              @apply w-full outline border-2 rounded bg-transparent text-sm text-gray-900 mb-4 p-2;
+              @apply w-full outline-none border rounded bg-transparent text-sm text-gray-900 mb-4 p-2;
 
               &::placehoder {
                 @apply text-[#C8C1D1] text-sm;
@@ -52,7 +52,7 @@
           }
 
           button {
-            @apply text-white;
+            @apply text-white bg-primary hover:bg-primary-dark;
           }
         }
       }

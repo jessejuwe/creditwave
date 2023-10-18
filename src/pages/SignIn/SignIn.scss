@@ -4,13 +4,13 @@
 
 @layer components {
   .app__signin {
-    @apply w-full h-screen bg-primary flex items-center justify-between;
+    @apply w-full h-screen flex items-center justify-between;
 
     .app__signin-info {
-      @apply w-full lg:max-w-[50%] px-20 pt-20 hidden lg:flex-col gap-10;
+      @apply h-full w-full lg:max-w-[50%] px-36 pt-20 hidden lg:flex flex-col bg-primary;
 
       .heading {
-        @apply text-white text-4xl font-bold tracking-wide;
+        @apply text-white text-4xl font-bold tracking-wide mb-12;
       }
 
       .text {
@@ -19,20 +19,20 @@
     }
 
     .app__signin-input {
-      @apply w-full lg:max-w-[50%] bg-gray-100 px-28 flex items-center justify-center relative;
+      @apply h-full w-full lg:max-w-[50%] bg-gray-100 px-10 lg:px-28 flex items-center justify-center relative gap-4;
 
       .centered {
-        @apply w-full flex-col items-center justify-center gap-10;
+        @apply w-full flex-col items-center justify-center gap-20;
 
         .logo {
-          @apply text-secondary text-4xl font-bold tracking-wider flex items-center justify-around;
+          @apply text-secondary text-4xl font-bold tracking-wider flex items-center justify-center mb-10;
         }
 
         form {
           @apply w-full flex-col items-center justify-center gap-5;
 
           input {
-            @apply w-full outline border-2 rounded bg-transparent text-sm text-gray-900 mb-4 p-2;
+            @apply w-full outline-none border rounded bg-transparent text-sm text-gray-900 mb-4 p-2;
 
             &::placehoder {
               @apply text-[#C8C1D1] text-sm;
@@ -43,7 +43,7 @@
             @apply relative w-full flex items-center justify-between;
 
             input {
-              @apply w-full outline border-2 rounded bg-transparent text-sm text-gray-900 mb-4 p-2;
+              @apply w-full outline-none border rounded bg-transparent text-sm text-gray-900 mb-4 p-2;
 
               &::placehoder {
                 @apply text-[#C8C1D1] text-sm;
@@ -56,13 +56,13 @@
           }
 
           button {
-            @apply text-white;
+            @apply text-white bg-primary hover:bg-primary-dark;
           }
         }
       }
 
       .copyright {
-        @apply text-right absolute right-28 bottom-10 text-sm text-gray-800;
+        @apply text-right absolute right-12 bottom-24 lg:right-28 lg:bottom-10 text-xs lg:text-sm text-gray-800;
       }
     }
   }
